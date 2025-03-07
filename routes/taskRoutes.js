@@ -3,7 +3,7 @@ const router = express.Router();
 const { protect } = require('../middleware/authMiddleWare');
 const {
   createTask,
-  getTasks,
+  getTask,
   getTaskById,
   updateTask,
   deleteTask
@@ -11,7 +11,7 @@ const {
 
 router.route('/')
   .post(protect, createTask)
-  .get(protect, getTasks);
+  .get(protect, getTask);
 
 router.route('/:id')
   .get(protect, getTaskById)
